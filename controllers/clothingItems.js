@@ -1,5 +1,5 @@
 const ClothingItem = require('../models/clothingItem');
-const { BAD_REQUEST, NOT_FOUND, INTERNAL_SERVER_ERROR } = require('../utils/errors');
+const { BAD_REQUEST, FORBIDDEN, NOT_FOUND, INTERNAL_SERVER_ERROR } = require('../utils/errors');
 
 // Get all clothing items
 const getClothingItems = (req, res) => {
@@ -37,7 +37,7 @@ const deleteClothingItem = (req, res) => {
     .then((item) => {
       // Check if current user is the owner of the item
       if (item.owner.toString() !== req.user._id) {
-        return res.status(403).send({ message: 'Not authorized to delete this item' });
+        return res.status(FORBIDDEN).send({ message: 'Not authorized to delete this item' });
       }
       return ClothingItem.findByIdAndDelete(itemId)
         .then(() => res.send({ message: 'Item deleted' }));

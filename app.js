@@ -96,11 +96,6 @@ const routes = require('./routes');
 
 app.use(routes);
 
-// Handle non-existent routes
-app.use((req, res) => {
-  res.status(404).send({ message: 'Requested resource not found' });
-});
-
 // Start the server
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
