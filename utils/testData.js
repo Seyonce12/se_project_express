@@ -33,6 +33,8 @@ const clothingItems = [
 
 const testUser = {
   name: "Test User",
+  email: 'test@example.com',
+  password: 'testpassword123',
   avatar: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/avatar.jpg",
 };
 
