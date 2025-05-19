@@ -24,6 +24,7 @@ mongoose.connect(DB_ADDRESS)
 
 // Import and use routes
 const routes = require('./routes');
+
 app.use(routes);
 
 // Start the server
