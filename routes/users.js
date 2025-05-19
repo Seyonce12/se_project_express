@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const auth = require('../middlewares/auth');
 const { updateProfile, getCurrentUser } = require('../controllers/users');
 
 // GET /users/:userId - Get user by ID
