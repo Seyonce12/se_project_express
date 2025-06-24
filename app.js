@@ -1,34 +1,36 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const { errors } = require('celebrate');
+const helmet = require('helmet');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
-const { PORT = 3001 } = process.env;
-const { DB_ADDRESS = 'mongodb://127.0.0.1:27017/wtwr_db' } = process.env;
+const PORT = process.env.PORT || 3000;
 
-// Middleware
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/wtwr');
+
+app.use(helmet());
 app.use(express.json());
-app.use(cors());
 
-// Connect to the MongoDB server
-mongoose.connect(DB_ADDRESS)
-  .then(() => {
-    // eslint-disable-next-line no-console
-    console.log('Connected to MongoDB');
-  })
-  .catch((err) => {
-    // eslint-disable-next-line no-console
-    console.error('Error connecting to MongoDB:', err);
-  });
+// Request logging
+app.use(requestLogger);
 
-// Import and use routes
-const routes = require('./routes');
+// Crash test route (for PM2 testing)
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Server will crash now');
+  }, 0);
+});
 
-app.use(routes);
+// Mount your routes below this line
+// app.use('/api', require('./routes/yourRoutes'));
 
-// Start the server
+app.use(errorLogger);
+app.use(errors());
+app.use(errorHandler);
+
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
