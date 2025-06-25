@@ -4,20 +4,26 @@ const clothingItemRouter = require('./clothingItems');
 const { login, createUser } = require('../controllers/users');
 const { NOT_FOUND } = require('../utils/errors');
 const auth = require('../middlewares/auth');
+const NotFoundError = require('../errors/NotFoundError');
 
-// POST /signin - User login
-router.post('/signin', login);
+const {
+  validateSignUp,
+  validateSignIn,
+  validateItemId,
+  validateItemBody,
+  validateUserUpdate,
+} = require('../middlewares/validation');
 
-// POST /signup - User registration
-router.post('/signup', createUser);
+router.post('/signup', validateSignUp, createUser);
+router.post('/signin', validateSignIn, login);
 
-// Mount the routes
-router.use('/users', auth, userRouter);
-router.use('/items', clothingItemRouter);
+router.post('/items', auth, validateItemBody, createClothingItem);
+router.delete('/items/:itemId', auth, validateItemId, deleteClothingItem);
+router.put('/items/:itemId/likes', auth, validateItemId, likeItem);
+router.delete('/items/:itemId/likes', auth, validateItemId, dislikeItem);
 
-// Handle invalid routes
-router.use((req, res) => {
-  res.status(NOT_FOUND).send({ message: 'Requested resource not found' });
-});
+router.patch('/users/me', auth, validateUserUpdate, updateProfile);
+
+router.use('*', (req, res, next) => next(new NotFoundError('Requested resource not found')));
 
 module.exports = router;
