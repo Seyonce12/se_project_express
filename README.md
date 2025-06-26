@@ -83,9 +83,6 @@ curl -X POST -H "Content-Type: application/json" -d '{"name": "Rain Jacket", "we
 
 ## Production Access
 
-- Backend: https://api.<your-domain>.com
-- Frontend: https://<your-domain>.com
-
 A temporary `/crash-test` route is enabled for PM2 auto‑restart testing.  
 Remove it after review is complete.
 
