@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "lint": "npx eslint ."
+    "lint": "eslint . --fix" 
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,16 @@
   "homepage": "https://github.com/Seyonce12/se_project_express#readme",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "celebrate": "^15.1.1", 
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "express-winston": "^4.3.2",
+    "helmet": "^7.0.0", 
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.14.1",
     "validator": "^13.15.0"
+    "winston": "^3.10.0" 
   },
   "devDependencies": {
     "eslint": "^8.57.1",
