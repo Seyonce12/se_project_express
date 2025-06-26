@@ -7,20 +7,24 @@ const {
   likeItem,
   dislikeItem,
 } = require('../controllers/clothingItems');
+const {
+  validateItemId,
+  validateItemBody,
+} = require('../middlewares/validation');
 
-// GET /items - Get all clothing items
+// GET /items
 router.get('/', getClothingItems);
 
-// POST /items - Create a new clothing item
-router.post('/', auth, createClothingItem);
+// POST /items
+router.post('/', auth, validateItemBody, createClothingItem);
 
-// DELETE /items/:itemId - Delete a clothing item
-router.delete('/:itemId', auth, deleteClothingItem);
+// DELETE /items/:itemId
+router.delete('/:itemId', auth, validateItemId, deleteClothingItem);
 
-// PUT /items/:itemId/likes - Like a clothing item
-router.put('/:itemId/likes', auth, likeItem);
+// LIKE /items/:itemId/likes
+router.put('/:itemId/likes', auth, validateItemId, likeItem);
 
-// DELETE /items/:itemId/likes - Dislike a clothing item
-router.delete('/:itemId/likes', auth, dislikeItem);
+// DISLIKE /items/:itemId/likes
+router.delete('/:itemId/likes', auth, validateItemId, dislikeItem);
 
 module.exports = router;
