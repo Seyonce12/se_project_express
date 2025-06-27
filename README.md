@@ -86,3 +86,9 @@ curl -X POST -H "Content-Type: application/json" -d '{"name": "Rain Jacket", "we
 A temporary `/crash-test` route is enabled for PM2 auto‑restart testing.  
 Remove it after review is complete.
 
+## Domains
+
+- Frontend: https://wtwr-frontend.example.com  
+- Backend: https://api.wtwr-backend.example.com
+
+
