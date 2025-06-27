@@ -11,4 +11,5 @@ module.exports = (err, req, res, next) => {
   res.status(statusCode).send({
     message: statusCode === 500 ? 'An unexpected server error occurred' : message,
   });
+next();
 };
