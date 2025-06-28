@@ -88,7 +88,8 @@ Remove it after review is complete.
 
 ## Domains
 
-- Frontend: https://wtwr-frontend.example.com  
-- Backend: https://api.wtwr-backend.example.com
+- Frontend: http://seyonce.jumpingcrab.com:3001
+- Frontend (www): http://www.seyonce.jumpingcrab.com:3001
+- Backend API: http://api.seyonce.jumpingcrab.com:3001
 
 
