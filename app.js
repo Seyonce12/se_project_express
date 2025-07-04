@@ -28,7 +28,7 @@ app.get('/crash-test', () => {
 
 // Mount your routes below this line
 // app.use('/api', require('./routes/yourRoutes'));
-const routes = require('./routes');
+// const routes = require('./routes');
 app.use(routes);                      // ≤ mount
 
 app.use(errorLogger);
@@ -36,7 +36,7 @@ app.use(errors());
 app.use(errorHandler);
 
 
-app.listen(PORT,'0.0.0.0' () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
 

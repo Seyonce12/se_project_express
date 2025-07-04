@@ -2,7 +2,7 @@ const router = require('express').Router();
 const userRouter = require('./users');
 const clothingItemRouter = require('./clothingItems');
 const { login, createUser } = require('../controllers/users');
-const auth = require('../middlewares/auth');
+// const auth = require('../middlewares/auth');
 const NotFoundError = require('../errors/NotFoundError');
 const {
   validateSignUp,
