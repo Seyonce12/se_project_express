@@ -88,8 +88,8 @@ Remove it after review is complete.
 
 ## Domains
 
-- Frontend: http://seyonce.jumpingcrab.com:3001
-- Frontend (www): http://www.seyonce.jumpingcrab.com:3001
-- Backend API: http://api.seyonce.jumpingcrab.com:3001
+- Frontend: http://Saby.jumpingcrab.com:3001
+- Frontend (www): http://www.Saby.jumpingcrab.com:3001
+- Backend API: http://api.Saby.jumpingcrab.com:3001
 
 
