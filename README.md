@@ -88,8 +88,8 @@ Remove it after review is complete.
 
 ## Domains
 
-- Frontend: http://Saby.jumpingcrab.com
-- Frontend (www): http://www.Saby.jumpingcrab.com
-- Backend API: http://api.Saby.jumpingcrab.com
+- Frontend: http://saby.crabdance.com
+- Frontend (www): www.Saby.crabdance.com
+- Backend API: api.Saby.crabdance.com
 
 
