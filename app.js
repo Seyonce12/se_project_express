@@ -11,7 +11,7 @@ const routes = require('./routes');   // ≤ import index.js
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://user1:p@ssword123@cluster0.uqiffjm.mongodb.net/aroundb?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://user1:password!123@cluster0.uqiffjm.mongodb.net/aroundb?retryWrites=true&w=majority&appName=Cluster0');
 
 app.use(helmet());
 app.use(express.json());
