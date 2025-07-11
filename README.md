@@ -88,8 +88,6 @@ Remove it after review is complete.
 
 ## Domains
 
-- Frontend: http://saby.crabdance.com
-- Frontend (www): www.Saby.crabdance.com
-- Backend API: api.Saby.crabdance.com
+https://saby1.ddnsfree.com/items/
 
 
