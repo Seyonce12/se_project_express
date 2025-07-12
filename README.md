@@ -89,5 +89,6 @@ Remove it after review is complete.
 ## Domains
 
 https://saby1.ddnsfree.com/items/
+https://www.saby1.ddnsfree.com/items
 
 
